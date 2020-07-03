@@ -13,6 +13,7 @@ jobs:
         uses: docker/build-push-action@v1.0.1
         with:
           repository: pnoj/tasker
+          path: tasker
           add_git_labels: true
           tag_with_sha: true
           tags: latest
