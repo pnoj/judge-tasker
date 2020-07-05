@@ -165,7 +165,7 @@ def main(args):
     with open(submission_file_path, 'r') as submission_file:
         compilation_result = runner.compile_submission(teller_config, executor_id, submission_file)
 
-    if compilation_result['status'] == 'CE':
+    if compilation_result['status'] in ['CE', 'IE']:
         compilation_result['score'] = {}
         compilation_result['score']['scored'] = None
         compilation_result['score']['scoreable'] = None
