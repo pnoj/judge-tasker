@@ -76,6 +76,7 @@ def get_single_batch(batch_dir, submission_file_path, time_limit, memory_limit, 
     batch_name = os.path.basename(batch_dir)
     testcases = os.listdir(batch_dir)
     testcases.remove('manifest.yaml')
+    testcases.sort()
     result = {'testcases': [], 'score': {'scored': 0, 'scoreable': 0}}
     abort = False
 
@@ -119,6 +120,7 @@ def get_single_batch(batch_dir, submission_file_path, time_limit, memory_limit, 
 
 def test(testcases_dir, submission_file_path, time_limit, memory_limit, teller_config, executor_id, passthrough_url):
     batches = os.listdir(testcases_dir)
+    batches.sort()
     statuses = []
     times = []
     memorys = []
